@@ -1,0 +1,167 @@
+/* CineFlix Pulse Roll Loader Styles */
+
+.cineflix-loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  user-select: none;
+  font-family: inherit;
+}
+
+/* Fullscreen Mode */
+.cineflix-loader-fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: radial-gradient(circle at center, rgba(20, 22, 34, 0.94) 0%, rgba(9, 10, 15, 0.98) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  min-height: 100vh;
+  min-width: 100vw;
+  padding: 2rem;
+  animation: cineflixLoaderFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Section Mode (In-page content, catalogs, admin views) */
+.cineflix-loader-section {
+  width: 100%;
+  min-height: 280px;
+  padding: 3rem 1.5rem;
+  background: radial-gradient(circle at center, rgba(22, 24, 38, 0.4) 0%, rgba(13, 14, 21, 0.2) 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin: 1.5rem 0;
+}
+
+/* Card Mode (For replacing cards or smaller blocks) */
+.cineflix-loader-card {
+  width: 100%;
+  min-height: 200px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: rgba(18, 20, 29, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* Inline / Compact Mode */
+.cineflix-loader-inline {
+  display: inline-flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+/* 3D Canvas Box wrapper */
+.cineflix-loader-canvas-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* Subtle glow behind the 3D roll */
+.cineflix-loader-glow {
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(229, 9, 20, 0.25) 0%, rgba(229, 9, 20, 0) 70%);
+  filter: blur(30px);
+  pointer-events: none;
+  z-index: 0;
+  animation: cineflixGlowPulse 2s ease-in-out infinite alternate;
+}
+
+/* Header & Text Info */
+.cineflix-loader-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 0.85rem;
+}
+
+.cineflix-loader-logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #ffffff 30%, #fca5a5 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.35rem;
+  filter: drop-shadow(0 2px 8px rgba(229, 9, 20, 0.4));
+}
+
+.cineflix-loader-text {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #94a3b8;
+  letter-spacing: 0.2px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cineflix-loader-dots {
+  display: inline-flex;
+  gap: 3px;
+  margin-left: 2px;
+}
+
+.cineflix-loader-dots span {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #e50914;
+  animation: dotBlink 1.4s infinite ease-in-out both;
+}
+
+.cineflix-loader-dots span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+.cineflix-loader-dots span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes cineflixLoaderFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes cineflixGlowPulse {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.15);
+    opacity: 0.8;
+  }
+}
+
+@keyframes dotBlink {
+  0%, 80%, 100% {
+    opacity: 0.2;
+    transform: scale(0.7);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}

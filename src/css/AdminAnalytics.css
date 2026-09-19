@@ -1,0 +1,67 @@
+/* Analytics page specific styles */
+.analytics-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+}
+
+.analytics-stat-card {
+  background: rgba(18, 21, 30, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 1.4rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+  transition: border-color 0.2s, transform 0.2s;
+  border-top: 3px solid var(--accent, #e50914);
+}
+
+.analytics-stat-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent, #e50914);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.analytics-stat-icon {
+  font-size: 1.8rem;
+}
+
+.analytics-stat-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.analytics-stat-label {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.analytics-section-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.analytics-progress-track {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.analytics-progress-bar {
+  height: 100%;
+  border-radius: 20px;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 900px) {
+  .analytics-section-grid {
+    grid-template-columns: 1fr;
+  }
+}

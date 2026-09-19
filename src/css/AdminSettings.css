@@ -1,0 +1,86 @@
+/* Admin Settings Styles */
+.settings-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.2rem;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  gap: 1rem;
+}
+
+.settings-toggle-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.settings-toggle-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.settings-toggle-desc {
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+.settings-toggle-btn {
+  width: 48px;
+  height: 26px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  transition: background 0.25s ease;
+}
+
+.settings-toggle-btn.on {
+  background: linear-gradient(135deg, #e50914, #b20710);
+}
+
+.settings-toggle-btn.off {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.settings-toggle-knob {
+  position: absolute;
+  top: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  transition: left 0.25s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.settings-toggle-btn.on .settings-toggle-knob {
+  left: 25px;
+}
+
+.settings-toggle-btn.off .settings-toggle-knob {
+  left: 3px;
+}
+
+.settings-danger-zone {
+  border-color: rgba(229, 9, 20, 0.3) !important;
+}
+
+.settings-danger-zone h3 {
+  color: #ff4d4d !important;
+}
+
+/* Select input style */
+.admin-form-input select,
+select.admin-form-input {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
