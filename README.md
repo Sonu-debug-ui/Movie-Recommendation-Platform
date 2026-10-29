@@ -18,6 +18,23 @@
 
 ---
 
+## 📖 About CineFlix
+
+> *"Your Premium Global Cinema Discovery Platform"*
+
+**CineFlix** is a full-stack, cinema-grade movie recommendation and streaming portal designed to solve **decision paralysis** and **discovery fatigue**. 
+
+In the modern streaming era, viewers spend upwards of 18–20 minutes merely scrolling through fragmented catalogs before choosing a film. Popular catalog websites are often cluttered with intrusive ads, sluggish interfaces, or disconnected metadata.
+
+**CineFlix bridges this gap** by bringing world cinema under a single, unified, ad-free umbrella:
+- **Global Cinema Curation**: Unified feeds for Hollywood Blockbusters, Bollywood Masterpieces, South Indian Pan-India Hits, K-Dramas, and Japanese Anime.
+- **Zero-Redirect Immersion**: Watch high-definition YouTube trailers, inspect IMDb & community ratings, review director and cast credits, and read deep-dive synopses directly within fluid modal overlays without leaving the page.
+- **Physics-Based Design System**: Built with an OLED dark aesthetic (`#090a0f`), specular glassmorphism, physics-based 3D cursor tilt tracking (`perspective: 1000px`), and animated light runner card contours.
+- **Enterprise-Grade Security**: Defended by an in-memory sliding-window rate limiter, PostgreSQL brute-force locks, RFC-compliant email sanitization, and real-time password complexity scoring.
+- **End-to-End Governance**: Features a dedicated back-office administrative CMS allowing moderators to manage films, curate taxonomies, inspect traffic KPIs, and moderate community reviews.
+
+---
+
 ## 🌟 Visual Showcase & Screenshots
 
 | 🖥️ Desktop Cinema & Security Modal | 📱 Mobile Responsive View |

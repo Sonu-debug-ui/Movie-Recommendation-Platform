@@ -1,5 +1,6 @@
 {
   "name": "movierecommender",
+  "description": "A modern, cinematic movie recommendation and discovery portal powered by React 19, Supabase, and Vanilla CSS Glassmorphism.",
   "private": true,
   "version": "0.0.0",
   "type": "module",
