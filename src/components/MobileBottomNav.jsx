@@ -41,13 +41,21 @@ function MobileBottomNav() {
         {favCount > 0 && <span className="mobile-badge">{favCount}</span>}
       </Link>
 
-      {isLoggedIn && (
+      {isLoggedIn ? (
         <Link
           to="/profile"
           className={`mobile-nav-item ${location.pathname === "/profile" ? "active" : ""}`}
         >
           <span className="mobile-nav-icon">👤</span>
           <span>Profile</span>
+        </Link>
+      ) : (
+        <Link
+          to="/about"
+          className={`mobile-nav-item ${location.pathname === "/about" ? "active" : ""}`}
+        >
+          <span className="mobile-nav-icon">ℹ️</span>
+          <span>About</span>
         </Link>
       )}
 

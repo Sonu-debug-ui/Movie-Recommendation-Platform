@@ -63,6 +63,12 @@ function NavBar() {
               Favorites
               {favCount > 0 && <span className="favorites-badge">{favCount}</span>}
             </Link>
+            <Link
+              to="/about"
+              className={`nav-link ${location.pathname === "/about" ? "active" : ""}`}
+            >
+              About
+            </Link>
 
             {isAdmin && (
               <Link

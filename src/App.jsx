@@ -3,6 +3,7 @@ import "./css/App.css";
 import Favorites from "./pages/Favorite";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
+import About from "./pages/About";
 import AdminLogin from "./pages/admin/AdminLogin";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminMovies from "./pages/admin/AdminMovies";
@@ -48,6 +49,7 @@ function AppContent() {
           {/* User Routes */}
           <Route path="/" element={<Home />} />
           <Route path="/favorites" element={<Favorites />} />
+          <Route path="/about" element={<About />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/loader" element={<LoaderShowcase />} />
 

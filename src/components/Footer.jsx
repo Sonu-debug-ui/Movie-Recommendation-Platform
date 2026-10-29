@@ -40,6 +40,9 @@ function Footer() {
             <li>
               <Link to="/favorites">Favorites Watchlist</Link>
             </li>
+            <li>
+              <Link to="/about">About CineFlix</Link>
+            </li>
             {isLoggedIn && (
               <li>
                 <Link to="/profile">User Profile</Link>
