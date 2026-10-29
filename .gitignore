@@ -7,16 +7,29 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Dependencies
+node_modules/
 
-# Editor directories and files
+# Production Builds
+dist/
+dist-ssr/
+.dist/
+
+# Environment Variables & Secrets
+.env
+.env.*
+!.env.example
+
+# Temporary and Browser Cache
+.chrome-temp/
+supabase/.temp/
+
+# Editor & System Files
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
+Thumbs.db
 *.suo
 *.ntvs*
 *.njsproj

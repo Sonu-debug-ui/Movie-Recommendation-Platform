@@ -103,12 +103,19 @@ export const AuthProvider = ({ children }) => {
   const signIn = async (email, password) => {
     const { data, error } = await supabase.auth.signInWithPassword({ email, password });
     if (error) throw error;
+    let prof = null;
     if (data?.user) {
       setUser(data.user);
-      const prof = await fetchProfile(data.user.id);
+      prof = await fetchProfile(data.user.id);
       setProfile(prof);
     }
-    return data;
+    return {
+      ...data,
+      data,
+      profile: prof,
+      user: data?.user,
+      session: data?.session,
+    };
   };
 
   const signInWithGoogle = async () => {

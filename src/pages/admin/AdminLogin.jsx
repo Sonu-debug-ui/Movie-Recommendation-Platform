@@ -21,8 +21,15 @@ function AdminLogin() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [cooldownSeconds, setCooldownSeconds] = useState(0);
-  const { signIn } = useAuth();
+  const { signIn, isLoggedIn, isAdmin } = useAuth();
   const navigate = useNavigate();
+
+  // If already logged in as admin, redirect to admin dashboard
+  useEffect(() => {
+    if (isLoggedIn && isAdmin) {
+      navigate("/admin", { replace: true });
+    }
+  }, [isLoggedIn, isAdmin, navigate]);
 
   // Check rate limit status on mount and manage cooldown timer
   useEffect(() => {
@@ -74,20 +81,23 @@ function AdminLogin() {
 
     setLoading(true);
     try {
-      const { data, error: authError } = await signIn(email, password);
-      if (authError) throw authError;
-
-      const userObj = data?.user;
+      const sanitizedEmail = email.trim().toLowerCase();
+      const authResult = await signIn(sanitizedEmail, password);
+      const userObj = authResult?.user || authResult?.data?.user;
       if (!userObj) throw new Error("No user returned from sign-in.");
 
-      // Check role directly from Supabase profiles
-      const { data: prof, error: profErr } = await supabase
-        .from("profiles")
-        .select("role")
-        .eq("id", userObj.id)
-        .single();
+      // Check role from auth profile or directly from Supabase profiles
+      let userRole = authResult?.profile?.role;
+      if (!userRole) {
+        const { data: prof } = await supabase
+          .from("profiles")
+          .select("role")
+          .eq("id", userObj.id)
+          .single();
+        userRole = prof?.role;
+      }
 
-      if (prof?.role === "admin") {
+      if (userRole === "admin") {
         // Successful admin login: reset rate limit
         resetRateLimit("admin_login");
         navigate("/admin");
@@ -102,7 +112,7 @@ function AdminLogin() {
           setCooldownSeconds(record.retryAfterSeconds);
         }
         setError(
-          `Access denied. Account "${email}" does not have admin permissions in the database.`
+          `Access denied. Account "${sanitizedEmail}" does not have admin permissions in the database.`
         );
         setLoading(false);
       }

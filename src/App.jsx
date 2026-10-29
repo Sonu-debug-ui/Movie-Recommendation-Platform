@@ -29,6 +29,7 @@ function AppContent() {
 
   useEffect(() => {
     if (isAdminRoute) return;
+    if (window.location.search.includes("guest")) return;
     // Show welcome auth popup once per session for guests
     const skipped = sessionStorage.getItem("cineflix_auth_skipped");
     const alreadyShown = sessionStorage.getItem("cineflix_auth_shown");
