@@ -126,8 +126,8 @@ Ensure you have the following installed on your machine:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/MovieRecommender.git
-cd MovieRecommender
+git clone https://github.com/Sonu-debug-ui/Movie-Recommendation-Platform.git
+cd Movie-Recommendation-Platform
 ```
 
 ### 2. Install Dependencies
@@ -219,8 +219,8 @@ git commit -m "feat: complete CineFlix platform with documentation and screensho
 
 # 4. Create a new repository on GitHub (e.g. CineFlix or MovieRecommender)
 
-# 5. Link your local repository to GitHub
-git remote add origin https://github.com/<your-username>/<your-repo-name>.git
+# Link your local repository to GitHub
+git remote add origin https://github.com/Sonu-debug-ui/Movie-Recommendation-Platform.git
 
 # 6. Set main branch and push
 git branch -M main
