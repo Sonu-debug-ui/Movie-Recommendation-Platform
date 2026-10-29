@@ -220,32 +220,6 @@ Open [http://localhost:5173](http://localhost:5173) in your browser to experienc
 
 ---
 
-## 🚢 Pushing to GitHub
-
-Follow these steps to push this project to your GitHub account:
-
-```bash
-# 1. Initialize or check git status
-git status
-
-# 2. Stage all project files
-git add .
-
-# 3. Commit the changes
-git commit -m "feat: complete CineFlix platform with documentation and screenshots"
-
-# 4. Create a new repository on GitHub (e.g. CineFlix or MovieRecommender)
-
-# Link your local repository to GitHub
-git remote add origin https://github.com/Sonu-debug-ui/Movie-Recommendation-Platform.git
-
-# 6. Set main branch and push
-git branch -M main
-git push -u origin main
-```
-
----
-
 ## 📄 License
 
 This project is open-source and distributed under the **MIT License**. Feel free to use, modify, and distribute for personal and educational projects.
